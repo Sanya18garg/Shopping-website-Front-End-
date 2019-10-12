@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRouteSnapshot,ActivatedRoute } from '@angular/router';
 import { DataService } from '../data.service';
+import {AppService} from "../app.service";
 
 @Component({
   selector: 'app-product-details',
@@ -10,7 +11,7 @@ import { DataService } from '../data.service';
 export class ProductDetailsComponent implements OnInit {
 public id;
 result:any;
-  constructor(private route:ActivatedRoute,private service:DataService) {
+  constructor(private route:ActivatedRoute,private service:DataService,private service1:AppService) {
     this.route.paramMap.subscribe(params=>{ this.id=params.get('id');
 this.service.getbyId(this.id).subscribe(response=>{this.result=response;console.log(this.result);
 //this.router.navigate(['/productdetails',id]);
@@ -23,10 +24,19 @@ this.service.getbyId(this.id).subscribe(response=>{this.result=response;console.
    // this.route.paramMap.subscribe(params=>{ let id=parseInt(params.get('id'));
    // this.ID=id;
   //});
-  
-  
+
+
   }
-  
+  addproduct(id) {
+
+    this.service1.addProductToCart(id).subscribe((data) => {
+      console.log(data);
+      alert("Product successfully added to the cart!");
+      //this.products = data;
+    });
+
+
+  }
 }
 
 

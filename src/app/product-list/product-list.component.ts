@@ -62,6 +62,7 @@ export class ProductListComponent implements OnInit {
 
     this.service1.addProductToCart(id).subscribe((data) => {
       console.log(data);
+      alert("Product successfully added to the cart!");
       //this.products = data;
     });
 

@@ -1,4 +1,4 @@
-<app-nav-bar></app-nav-bar>
+
 <head>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -8,28 +8,36 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
 </head>
+<div class="container-fluid o " style="background-color:#383838 ">
+  <div class="row ">
+    <div class="col-sm-12 " style="display: inline-flex;">
+      <h1 class="j mt-4"><b><i>ShoppingBee!</i></b></h1>
+      <h3 class="text-light ml-auto h" ><b><span class="i"><u>Bag</u></span>-----------Address----------Payment</b></h3>
+      <h3 class="k  ml-auto h"><b>100% SECURE</b></h3>
+    </div>
+  </div>
 
-<div  class="bg-light">
-  <h2 style="text-align:center;padding:10px;">My Cart</h2>
-</div>
 
-<div class="container bg-light">
+<div class="container-fluid bg-light mt-5">
   <div class="row">
     <div class="col-sm-8 bg-light">
 
       <div *ngFor="let p of cart">
 
-          <div class="item1">
+          <div class="item1" style="display: flex;">
             <div><img src="../../assets/images/{{p.items.image}}"></div>
-            <div ><p> {{p.items.productName}}</p>
-              <button type="button" class="btn btn-outline-secondary" (click)="decreaseproduct(p.items.productid)">-</button>
+            <div style="margin-left:200px;margin-top:70px; "><p><b>Product Name:</b> {{p.items.productName}}</p>
+              <p><b>Product Quantity:&nbsp;&nbsp;</b>
+                <span><button type="button" class="btn btn-outline-secondary" (click)="decreaseproduct(p.items.productid)">-</button></span>
               &nbsp;<span>{{p.quantity}}</span>&nbsp;&nbsp;
-              <button type="button" class="btn btn-outline-secondary" (click)="increaseproduct(p.items.productid)">+</button>
-              &nbsp;<span>Size:M</span><br><br/>
+                <span><button type="button" class="btn btn-outline-secondary" (click)="increaseproduct(p.items.productid)">+</button></span></p>
+              <div><b>Product Price:</b>{{p.items.productPrice}}</div>
+              <br />
               <button class="btn btn-danger" (click)="deleteproduct(p.items.productid)">Remove</button></div>
-            <div>{{p.items.productPrice}}</div>
+
 
 <hr />
+            <hr />
         </div>
       </div>
       <br/>
