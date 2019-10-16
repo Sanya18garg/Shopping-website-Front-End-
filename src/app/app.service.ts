@@ -10,14 +10,14 @@ export class AppService {
   getAllItems()
   {
     const token =sessionStorage.getItem("token");
-    const headers=new HttpHeaders({Authorization:'Basic'+token});
+    const headers=new HttpHeaders({Authorization:'Basic '+token});
     return this.http.get("http://localhost:8090/api/notes",{headers});
 
   }
   getItemById(id)
   {
     const token=sessionStorage.getItem("token");
-    const headers=new HttpHeaders({Authorization:'Basic'+token});
+    const headers=new HttpHeaders({Authorization:'Basic '+token});
     return this.http.get("http://localhost:8090/api/notes"+id,{headers});
 
   }
@@ -71,6 +71,8 @@ console.log(productid);
     const headers=new HttpHeaders({Authorization:'Basic '+token});
     return this.http.get("http://localhost:8090/cart/checkout/recieve",{headers});
   }
+
+
   showCart()
   {
     const token=sessionStorage.getItem("token");

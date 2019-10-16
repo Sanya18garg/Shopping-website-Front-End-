@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
-<div class="o container-fluid bg-light">
+<div class="container-fluid bg-light">
   <div class="row">
     <div class="col-sm-12">
       <br />
@@ -39,7 +39,7 @@
             <div class="form-group">
               <label class="col-lg-3 control-label text-dark">Username:</label>
               <div class="col-lg-8">
-                <input class="form-control" value="{{myprod.username}}" type="text">
+                <input class="form-control" [(ngModel)]="myprod.username" value="{{myprod.username}}" name="username" type="text" >
               </div>
             </div>
 
@@ -63,7 +63,7 @@
             <div class="form-group">
               <label class="col-md-3 control-label"></label>
               <div class="col-md-8">
-                <input class="btn btn-primary" value="Edit Changes" type="button">
+                <input class="btn btn-primary" value="Edit Changes" type="button"(click)="edit()">
                 <span>&nbsp;&nbsp;</span>
                 <input class="btn btn-default btn btn-primary" value="Save Changes" type="reset">
                 <span> &nbsp;</span>
@@ -78,3 +78,4 @@
   </div>
 
 
+</div>
