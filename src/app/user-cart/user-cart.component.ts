@@ -10,7 +10,9 @@ import {AppService} from "../app.service";
 export class UserCartComponent implements OnInit {
   prodid;
   products;
-cart;
+  total=0;
+  cart;
+i;
   constructor(private router: Router, private service: AppService, private activatedRoute: ActivatedRoute) {
   }
 
@@ -18,20 +20,55 @@ cart;
 
     return this.service.showCart().subscribe((data) => {
       this.cart = data;
+      this.findtotal();
     });
 
   }
-  deleteproduct(id)
-  {
-    this.service.DeleteProduct(id).subscribe((data)=>{this.service.showCart().subscribe((data1)=>{this.cart=data1;});});
-  }
-  decreaseproduct(rid:number)
-  {
-    this.service.removeproductFromCart(rid).subscribe((data)=>{this.service.showCart().subscribe((data2)=>{this.cart=data2;});});
-  }
-increaseproduct(aid:number)
-{
-  this.service.addProductToCart(aid).subscribe((data)=>{this.service.showCart().subscribe((data3)=>{this.cart=data3;});});
-}
+
+  deleteproduct(id) {
+    this.service.DeleteProduct(id).subscribe((data) => {
+      this.service.showCart().subscribe((data1) => {
+        this.cart = data1;
+      });
+    });
   }
 
+  decreaseproduct(rid: number) {
+    this.service.removeproductFromCart(rid).subscribe((data) => {
+      this.service.showCart().subscribe((data2) => {
+        this.cart = data2;this.findtotal1();
+      });
+    });
+  }
+
+  increaseproduct(aid: number) {
+    this.service.addProductToCart(aid).subscribe((data) => {
+      this.service.showCart().subscribe((data3) => {
+        this.cart = data3;this.findtotal();
+      });
+    });
+  }
+
+ checkout() {
+    this.service.checkout().subscribe((data4) => {
+      this.router.navigate(["/orderhistory"]);
+  });
+   //this.router.navigate(["/orderhistory"]);
+ }
+  findtotal()
+  {
+    this.total=0;
+    for(this.i=0;this.i<this.cart.length;this.i++)
+    {
+      this.total+=this.cart[this.i].items.productPrice*this.cart[this.i].quantity;
+    }
+  }
+  findtotal1()
+  {
+    this.total=0;
+    for(this.i=0;this.i<this.cart.length;this.i++)
+    {
+      this.total=this.cart[this.i].items.productPrice*this.cart[this.i].quantity-this.total;
+    }
+  }
+}

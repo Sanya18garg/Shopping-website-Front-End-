@@ -10,15 +10,19 @@ import { ProfileComponent } from './profile/profile.component';
 
 
 import { ProductListComponent } from './product-list/product-list.component';
+import {OrderhistoryComponent} from "./orderhistory/orderhistory.component";
 
 
 const routes: Routes = [
- // {path:'',redirectTo:'/home',component:HomePageComponent,pathMatch:'full'},
+  {path:'',redirectTo:'/home',pathMatch:'full'},
   {path:'login', component:LoginComponent},
 
   {path:'productdetails/:id',component:ProductDetailsComponent},
   {
     path:'cart',component:UserCartComponent
+  },
+  {
+    path:'orderhistory',component:OrderhistoryComponent
   },
   {path:'home',component:HomePageComponent},
   {

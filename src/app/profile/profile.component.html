@@ -10,81 +10,64 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
-<div class="o container-fluid">
+<div class="o container-fluid bg-light">
   <div class="row">
     <div class="col-sm-12">
       <br />
       <br />
       <br />
-      <h1 class="page-header text-light " ><b><i class="fa fa-user" style="font-size:48px;color:white;"></i>&nbsp;My Profile</b></h1>
-      <hr class="bg-light" />
-      <hr class=" text-light">
+      <h1 class="page-header text-dark " ><b><i class="fa fa-user" style="font-size:48px;color:black;"></i>&nbsp;My Profile</b></h1>
+      <hr class="bg-dark" />
+     <!-- <hr class=" text-light">-->
       <div class="row">
         <!-- left column -->
         <div class="col-md-4 col-sm-6 col-xs-12">
           <div class="text-center">
-            <img src="http://lorempixel.com/200/200/people/9/" class="avatar rounded-circle img-thumbnail" alt="avatar">
+            <img src="../../assets/images/usey.png" class="avatar rounded-circle img-thumbnail" alt="avatar">
             <br />
             <br />
-            <h6 class="text-light">Upload a different photo...</h6>
-            <input type="file" class="text-center center-block well well-sm">
+
+
           </div>
         </div>
         <!-- edit form column -->
         <div class="col-md-8 col-sm-6 col-xs-12 personal-info">
 
-          <h3 class="text-light"><u>Personal info</u></h3>
+          <h3 class="text-dark"><u>Personal info</u></h3>
+          <br />
           <form class="form-horizontal" role="form">
             <div class="form-group">
-              <label class="col-lg-3 control-label text-light">First name:</label>
+              <label class="col-lg-3 control-label text-dark">Username:</label>
               <div class="col-lg-8">
-                <input class="form-control" value="Jane" type="text">
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="col-lg-3 control-label text-light">Last name:</label>
-              <div class="col-lg-8">
-                <input class="form-control" value="Bishop" type="text">
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="col-md-3 control-label text-light">Mobile No:</label>
-              <div class="col-md-8">
-                <input class="form-control" value="11111122333" type="text">
+                <input class="form-control" value="{{myprod.username}}" type="text">
               </div>
             </div>
 
-            <div class="form-group">
-              <label class="col-lg-3 control-label text-light">Email:</label>
-              <div class="col-lg-8">
-                <input class="form-control" value="janesemail@gmail.com" type="text">
-              </div>
-            </div>
+
+
+
+
 
             <div class="form-group">
-              <label class="col-md-3 control-label text-light">Username:</label>
+              <label class="col-md-3 control-label text-dark">Password:</label>
               <div class="col-md-8">
-                <input class="form-control" value="janeuser" type="text">
+                <input class="form-control" value="{{myprod.password}}" type="password">
               </div>
             </div>
-            <div class="form-group">
-              <label class="col-md-3 control-label text-light">Password:</label>
-              <div class="col-md-8">
-                <input class="form-control" value="11111122333" type="password">
-              </div>
-            </div>
-            <div class="form-group">
+          <!--  <div class="form-group">
               <label class="col-md-3 control-label text-light">Confirm password:</label>
               <div class="col-md-8">
                 <input class="form-control" value="11111122333" type="password">
               </div>
-            </div>
+            </div>-->
             <div class="form-group">
               <label class="col-md-3 control-label"></label>
               <div class="col-md-8">
                 <input class="btn btn-primary" value="Edit Changes" type="button">
                 <span>&nbsp;&nbsp;</span>
                 <input class="btn btn-default btn btn-primary" value="Save Changes" type="reset">
+                <span> &nbsp;</span>
+                <button type="button" class="btn btn-primary" routerLink="/orderhistory">Show order history</button>
               </div>
             </div>
           </form>

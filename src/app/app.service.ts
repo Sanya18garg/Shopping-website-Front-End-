@@ -53,6 +53,24 @@ console.log(productid);
     const headers=new HttpHeaders({Authorization:'Basic '+token});
     return this.http.get("http://localhost:8090/cart/removeproduct/receive/"+prodid,{headers});
   }
+  getinfo()
+  {
+    const token=sessionStorage.getItem("token");
+    const headers=new HttpHeaders({Authorization:'Basic '+token});
+    return this.http.get("http://localhost:8090/profile/get",{headers});
+  }
+  getorderhistory()
+  {
+    const token=sessionStorage.getItem("token");
+    const headers=new HttpHeaders({Authorization:'Basic '+token});
+    return this.http.get("http://localhost:8090/cart/orderhistory/receive",{headers});
+  }
+  checkout()
+  {
+    const token=sessionStorage.getItem("token");
+    const headers=new HttpHeaders({Authorization:'Basic '+token});
+    return this.http.get("http://localhost:8090/cart/checkout/recieve",{headers});
+  }
   showCart()
   {
     const token=sessionStorage.getItem("token");

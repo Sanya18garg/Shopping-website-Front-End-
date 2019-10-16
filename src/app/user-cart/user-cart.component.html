@@ -59,45 +59,29 @@
     </div> <!-- This is col-sm-4 div --->
 
 
-    <div class="col-sm-4 column8">
+ <!--   <div class="col-sm-4 column8">
       <div class="bag p-2">PRICE DETAILS</div>
       <div class="price py-2">
         <div>Bag Total</div>
         <div>Rs.1200</div>
-      </div>
-
+      </div>-->
+    <div class="col-sm-4 column8">
+     <!-- <div class="bag p-2"><b>PRICE DETAILS</b></div>-->
+    <h3><b>PRICE DETAILS</b></h3>
       <div class="price py-2">
-        <div>Bag Discount</div>
-        <div>-Rs.200</div>
+        <h5>Bag Total: Rs.{{total}}</h5>
+
       </div>
 
 
-      <div class="price py-2">
-        <div>Coupon Discount</div>
-        <div>Rs.43</div>
-      </div>
-
-      <div class="price py-2">
-        <div>Tax</div>
-        <div>Rs.127</div>
-      </div>
-
-      <div class="price py-2">
-        <div>Order Total</div>
-        <div>Rs.900</div>
-      </div>
-
-      <div class="price py-2">
-        <div>Delievery Charges</div>
-        <div>Rs.150</div>
-      </div>
 
       <hr/>
-      <div class="price py-1">
-        <div style="font-weight: bold">Total</div>
-        <div style="font-weight: bold">Rs.1050</div>
-      </div>
 
-    </div> <!-- This is col-sm-8 div --->
+      <button (click)="checkout()" class="btn btn-primary btn-block">CheckOut</button>
+
+     <!-- This is col-sm-8 div --->
   </div>  <!-- This is row div -->
 </div>  <!--- This is container div -->
+
+</div>
+</div>
