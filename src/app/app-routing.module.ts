@@ -11,6 +11,7 @@ import { ProfileComponent } from './profile/profile.component';
 
 import { ProductListComponent } from './product-list/product-list.component';
 import {OrderhistoryComponent} from "./orderhistory/orderhistory.component";
+import {AddproductComponent} from "./addproduct/addproduct.component";
 
 
 const routes: Routes = [
@@ -32,6 +33,7 @@ const routes: Routes = [
 
 
   {path:'signup',component:SignUpComponent},
+  {path:'add',component:AddproductComponent},
   {path:'profile',component:ProfileComponent}
 ];
 

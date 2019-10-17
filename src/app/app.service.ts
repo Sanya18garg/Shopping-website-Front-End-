@@ -85,4 +85,10 @@ console.log(productid);
     const headers=new HttpHeaders({Authorization:'Basic '+token});
     return this.http.get("http://localhost:8090/cart/clearcart",{headers});
   }
+  addit(json)
+  {
+    const token=sessionStorage.getItem("token");
+    const headers=new HttpHeaders({Authorization:'Basic '+token});
+    return this.http.post<any>("http://localhost:8090/api/notes1",json,{headers});
+  }
 }

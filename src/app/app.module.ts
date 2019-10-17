@@ -17,6 +17,7 @@ import {HttpHeaders, HttpClientModule} from '@angular/common/http';
 import {HttpClient} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 import { OrderhistoryComponent } from './orderhistory/orderhistory.component';
+import { AddproductComponent } from './addproduct/addproduct.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { OrderhistoryComponent } from './orderhistory/orderhistory.component';
     SignUpComponent,
     UserCartComponent,
     ProfileComponent,
-    OrderhistoryComponent
+    OrderhistoryComponent,
+    AddproductComponent
     
    
   ],
