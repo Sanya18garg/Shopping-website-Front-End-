@@ -17,6 +17,12 @@ getproductByCategory(category:String)
 {
   return this.http.get("http://localhost:8090/api/products/category/"+category);
 }
+edit(bool:boolean)
+{
+  localStorage.setItem('edit',String(bool));
+  return bool;
+}
+
 getbyId(id:Number)
 {
   return this.http.get("http://localhost:8090/api/notes/"+id);

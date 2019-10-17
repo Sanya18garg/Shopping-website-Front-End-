@@ -21,6 +21,7 @@ post1=new posts(1,"","", "bdn");
       error=>console.log("ERROR",error)
 
     )
+    alert("Successfully created account:Press Login")
   }
 
 }

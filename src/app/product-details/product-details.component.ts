@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRouteSnapshot,ActivatedRoute } from '@angular/router';
+import {ActivatedRouteSnapshot, ActivatedRoute, Router, Data} from '@angular/router';
 import { DataService } from '../data.service';
 import {AppService} from "../app.service";
 
@@ -11,13 +11,14 @@ import {AppService} from "../app.service";
 export class ProductDetailsComponent implements OnInit {
 public id;
 result:any;
-  constructor(private route:ActivatedRoute,private service:DataService,private service1:AppService) {
+  constructor(private router:Router,private service4:DataService,private route:ActivatedRoute,private service:DataService,private service1:AppService) {
     this.route.paramMap.subscribe(params=>{ this.id=params.get('id');
 this.service.getbyId(this.id).subscribe(response=>{this.result=response;console.log(this.result);
 //this.router.navigate(['/productdetails',id]);
 });
    });
    }
+
 
   ngOnInit() {
     //let id=parseInt(this.route.Snapshot.parseMap.get('id'));
@@ -36,6 +37,18 @@ this.service.getbyId(this.id).subscribe(response=>{this.result=response;console.
     });
 
 
+  }
+  editProduct(productid) {
+    this.service4.edit(true);
+    this.route.paramMap.subscribe(params => {
+      this.id = params.get('id');
+      this.router.navigate(['/add'], {
+        relativeTo: this.route,
+        queryParams: {
+          id: productid
+        }
+      });
+    });
   }
 }
 

@@ -40,6 +40,12 @@ console.log(productid);
     const headers=new HttpHeaders({Authorization:'Basic '+token});
     return this.http.get("http://localhost:8090/cart/addproduct/receive/"+productid,{headers});
   }
+  editprod(productid,data)
+  {
+    const token=sessionStorage.getItem("token");
+    const headers=new HttpHeaders({Authorization:'Basic '+token});
+    return this.http.put("http://localhost:8090/api/edit/"+productid,data,{headers});
+  }
   DeleteProduct(productid)
   {
     console.log(productid);
