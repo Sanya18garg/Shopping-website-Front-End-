@@ -26,7 +26,7 @@ login()
 {
   console.log(this.username);
   console.log(this.password);
-  this.authservice.authenticate(this.username,this.password).subscribe(data=>{this.service.isloggedin(true);this.router.navigate(['home']);});
+  this.authservice.authenticate(this.username,this.password).subscribe(data=>{this.service.isloggedin(true);this.router.navigate(['products']);});
 
 
 }
